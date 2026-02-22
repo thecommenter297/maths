@@ -37,7 +37,7 @@ $\rightarrow MB = 7MA$
 
 $\rightarrow$ $\frac{\vec{MA}}{MA} - 7\frac{\vec{MB}}{7MA} = \lambda \vec{n}$
 
-$ \rightarrow \frac{\vec{MA} - \vec{MB}}{MA} = \lambda \vec{n}$
+$\rightarrow \frac{\vec{MA} - \vec{MB}}{MA} = \lambda \vec{n}$
 
 Vì $\vec{MA} - \vec{MB} = \vec{BA}$, phương trình trở thành: $\frac{\vec{BA}}{MA} = \lambda \vec{n}$
 
