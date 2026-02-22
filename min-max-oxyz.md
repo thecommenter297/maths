@@ -115,7 +115,7 @@ Lúc này, khoảng cách cần tìm chính là đoạn $MH$. Đường thẳng 
 
 Tích vô hướng: $(x-1)\cdot 0 + (y-2)\cdot 0 + z\cdot(-3) = 0 \implies \mathbf{-3z = 0 \implies z = 0}$.
 
-*(Tuyệt vời! Đại số tự động khai tử biến $z$. Từ đây ta biết Vector chỉ phương $\vec{u}$ có cao độ $b = 0$. Điểm $H$ giờ chỉ còn là $H(x,y,0)$).*
+> Tuyệt vời! Đại số tự động khai tử biến z. Từ đây ta biết Vector chỉ phương $$\vec{u}$$ có cao độ $b = 0$. Điểm $H$ giờ chỉ còn là $$H(x,y,0)$$.
 
 **Ràng buộc 2:** $H$ là hình chiếu của $M$ lên $d \implies MH \perp BH \implies \vec{MH} \cdot \vec{BH} = 0$.
 *   $\vec{MH} = (x - (-1), y - 3, 0 - 4) = (x+1, y-3, -4)$
@@ -125,17 +125,23 @@ Tích vô hướng: $(x+1)(x-1) + (y-3)(y-2) + (-4)(0) = 0$
 $\implies x^2 - 1 + y^2 - 5y + 6 = 0$
 $\implies \mathbf{x^2 + y^2 - 5y + 5 = 0} \quad (*)$
 
-*(Đây chính là phương trình Ràng buộc $g(x,y) = 0$ cho hệ Lagrange).*
+> Đây chính là phương trình Ràng buộc $g(x,y) = 0$ cho hệ Lagrange).
 
 ---
 
 #### Bước 2: Lập hệ Đạo hàm (Lagrange Style)
 Mục tiêu: **Tìm Min của $MH^2$** (do $MH^2$ đạt GTNN thì $MH$ cũng có GTNN, nên đưa về bình phương cho dễ tính)
+
 $$f(x,y) = MH^2 = (x+1)^2 + (y-3)^2 + 16$$
+
 Với điều kiện ràng buộc $(*)$: $x^2 + y^2 - 5y + 5 = 0$.
 
 Viết hệ 2 phương trình đạo hàm (Đạo hàm $f$ cộng $\lambda \times$ Đạo hàm $g$):
-$$\begin{cases} L'_x = 2(x+1) + \lambda(2x) = 0 & (1) \\ L'_y = 2(y-3) + \lambda(2y - 5) = 0 & (2) \end{cases}$$
+
+$$\begin{cases} 
+L'_x = 2(x+1) + \lambda(2x) = 0 & (1) \\
+L'_y = 2(y-3) + \lambda(2y - 5) = 0 & (2) 
+\end{cases}$$
 
 ---
 
@@ -145,11 +151,17 @@ Rút $\lambda$ từ cả hai phương trình rồi cho chúng bằng nhau:
 *   Từ (2) $\implies \lambda = -\frac{y-3}{y-2.5}$ *(Chia 2 cả tử và mẫu cho gọn)*
 
 Ép chúng bằng nhau (Nhân chéo):
+
 $$\frac{x+1}{x} = \frac{y-3}{y-2.5}$$
+
 $$(x+1)(y-2.5) = x(y-3)$$
+
 $$xy - 2.5x + y - 2.5 = xy - 3x$$
+
 $$0.5x + y - 2.5 = 0$$
+
 Nhân đôi 2 vế cho đẹp:
+
 $$\mathbf{x + 2y - 5 = 0 \implies x = 5 - 2y}$$
 
 ---
@@ -157,18 +169,24 @@ $$\mathbf{x + 2y - 5 = 0 \implies x = 5 - 2y}$$
 #### Bước 4: Lấy các kết quả cần thiết
 
 Thay $x = 5-2y$ vào Ràng buộc $(*)$ ban đầu:
+
 $$(5-2y)^2 + y^2 - 5y + 5 = 0$$
+
 $$25 - 20y + 4y^2 + y^2 - 5y + 5 = 0$$
+
 $$5y^2 - 25y + 30 = 0$$
+
 Rút gọn cho 5:
+
 $$y^2 - 5y + 6 = 0$$
+
 Bấm máy tính, ra 2 nghiệm cực đẹp:
 
 **Nghiệm 1: $y = 3 \implies x = 5 - 2(3) = -1$.** Ta có điểm $H_1(-1, 3, 0)$.
 
 **Nghiệm 2: $y = 2 \implies x = 5 - 2(2) = 1$.** Ta có điểm $H_2(1, 2, 0)$.
 
-*(Đại số luôn tìm ra TẤT CẢ cực trị. Một cái sẽ là Min, một cái sẽ là Max. Thử tính khoảng cách $MH^2$ cho 2 điểm này)*:
+> Đại số luôn tìm ra TẤT CẢ cực trị. Một cái sẽ là Min, một cái sẽ là Max. Thử tính khoảng cách $MH^2$ cho 2 điểm này):
 *   Với $H_1(-1, 3, 0): MH_1^2 = (-1+1)^2 + (3-3)^2 + (0-4)^2 = 16$. **(Đây là MIN)**
 *   Với $H_2(1, 2, 0): MH_2^2 = (1+1)^2 + (2-3)^2 + (0-4)^2 = 4 + 1 + 16 = 21$. (Đây là Max).
 
