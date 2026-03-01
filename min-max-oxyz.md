@@ -208,3 +208,143 @@ Tính $a+b = -1 + 0 = \mathbf{-1}$.
 
 
 ---
+
+**Bài 3**: Trong không gian $(Oxy)$, có 2 trạm phát sóng trên không: trạm A đặt trên không tại vị trí $A(1;1;3)$, trạm B đặt trên không tại vị trí $B(10;13;6)$. Trên mặt đất người ta cần đặt 2 trạm thu tín hiệu M và N sao cho khoảng cách giữa 2 trạm thu là cố định: $MN = 5$ và tổng chiều dài dây nối từ trạm A đến M và từ trạm B đến N là ngắn nhất. Khi đó, tổng hoành độ 2 điểm M và N bằng?
+
+CRE: https://www.tiktok.com/@toanlxo/video/7602578317568429329
+
+### Bước 1: Setup hàm và viết nhanh hệ phương trình
+*   **Dữ kiện:** $A(1, 1, 3)$ và $B(10, 13, 6)$. Mặt đất là $(Oxy)$ nên có $M(x_M, y_M, 0)$ và $N(x_N, y_N, 0)$.
+*   **Điều kiện (Constraint):** $MN = 5$.
+*   **Từ đó lập hàm cần tối ưu:**
+
+    $L = AM + BN + \lambda \cdot (MN - 5)$.
+
+    > Viết hẳn ra cho dễ tưởng tượng còn thực tế nên hạn chế viết hẳn, vì cần tốc độ:
+
+    $L = \sqrt{(x_M - 1)^2 + (y_M - 1)^2 + (0 - 3)^2} + \sqrt{(x_N - 10)^2 + (y_N - 13)^2 + (0 - 6)^2} +  \lambda(\sqrt{(x_N - x_M)^2 + (y_N - y_M)^2} - 5)$
+
+
+
+Lập hệ đạo hàm cho các biến $x_M, y_M, x_N, y_N$:
+
+$$\begin{cases}
+L'_{x_M} = \frac{x_M - 1}{AM} + \lambda \frac{x_M - x_N}{MN} = 0 & (1) \\
+L'_{y_M} = \frac{y_M - 1}{AM} + \lambda \frac{y_M - y_N}{MN} = 0 & (2) \\
+L'_{x_N} = \frac{x_N - 10}{BN} + \lambda \frac{x_N - x_M}{MN} = 0 & (3) \\
+L'_{y_N} = \frac{y_N - 13}{BN} + \lambda \frac{y_N - y_M}{MN} = 0 & (4) \\
+L'_{\lambda} = MN - 5 
+\end{cases}$$
+
+### Bước 2: Triệt tiêu $\lambda$ 
+Nhìn vào các phần tử có mẫu số là $MN$ chứa $\lambda$. Thấy được $\frac{x_M - x_N}{MN}$ và $\frac{x_N - x_M}{MN}$ là hai giá trị **đối nhau**.
+
+$\implies$ Lấy **(1) + (3)**:
+$$\frac{x_M - 1}{AM} + \frac{x_N - 10}{BN} = 0 \iff \mathbf{\frac{x_M - 1}{AM} = \frac{10 - x_N}{BN}} \quad (*)$$
+
+Tương tự, lấy **(2) + (4)**:
+
+$$\frac{y_M - 1}{AM} + \frac{y_N - 13}{BN} = 0 \iff \mathbf{\frac{y_M - 1}{AM} = \frac{13 - y_N}{BN}} \quad (**)$$
+
+### Bước 3: Tư duy Vector Đơn vị
+
+Theo Pythagoras trong không gian 3D, bình phương chiều dài sợi dây bằng tổng bình phương 3 độ lệch:
+
+$$d^2 = \Delta x^2 + \Delta y^2 + \Delta z^2$$
+
+Chia tất cả cho $d^2$, ta được một hệ thức luôn bằng **1**:
+
+$$ \frac{\Delta x^2}{d^2} + \frac{\Delta y^2}{d^2} + \frac{\Delta z^2}{d^2} = 1 $$
+
+
+$$\implies \begin{cases}
+\left(\frac{x_M - 1}{AM}\right)^2 + \left(\frac{y_M - 1}{AM}\right)^2 + \left(\frac{0 - 3}{AM}\right)^2 = 1 \\
+\left(\frac{10 - x_N}{BN}\right)^2 + \left(\frac{13 - y_N}{BN}\right)^2 + \left(\frac{0 - 6}{BN}\right)^2 = 1
+\end{cases}$$
+
+Mà ta có $(*)$ và $(**)$ nên:
+
+$$\implies \begin{cases}
+\left(\frac{x_M - 1}{AM}\right)^2 + \left(\frac{y_M - 1}{AM}\right)^2 + \left(\frac{0 - 3}{AM}\right)^2 = 1 \\
+\left(\frac{x_M - 1}{AM}\right)^2 + \left(\frac{y_M - 1}{AM}\right)^2 + \left(\frac{0 - 6}{BN}\right)^2 = 1
+\end{cases}$$
+
+$$\implies \left(-\frac{3}{AM}\right)^2 = \left(-\frac{6}{BN}\right)^2$$
+
+$$\implies \mathbf{BN = 2AM}$$
+
+
+### Bước 4: Chuyển về hệ phương trình bậc nhất
+Thay $BN = 2AM$ ngược lại vào phương trình $(*)$ và $(**)$:
+
+$$\frac{x_M - 1}{AM} = \frac{10 - x_N}{2AM} \implies \mathbf{2x_M + x_N = 12}$$
+
+$$\mathbf{\frac{y_M - 1}{AM} = \frac{13 - y_N}{BN}} \implies 2y_M + y_N = 15$$
+
+### Bước 5: Tìm M
+Từ $x_N = 12 - 2x_M$ và $y_N = 15 - 2y_M$, thế vào điều kiện $MN = 5$ ta được:
+
+$$(12 - 3x_M)^2 + (15 - 3y_M)^2 = 25 \iff \mathbf{(x_M - 4)^2 + (y_M - 5)^2 = \frac{25}{9}}$$
+
+
+
+**Tham số hóa Lượng giác (Casio)**:
+
+Từ phương trình đường tròn: $(x - 4)^2 + (y - 5)^2 = \left(\frac{5}{3}\right)^2$.
+Mọi điểm nằm trên đường tròn này luôn có dạng:
+
+$$\begin{cases} x = 4 + \frac{5}{3} \cos t \\ y = 5 + \frac{5}{3} \sin t \end{cases}$$
+
+Thay thẳng cục này vào hàm cần đạt Min:
+
+$$AM + BN = AM+2AM = 3AM$$
+
+> Đoạn này không cần $\lambda \cdot (MN - 5)$ nữa vì khi thay x và y bên trên vào ta đang xét trên ràng buộc để $MN=5$ rồi
+
+$$3AM = \sqrt{(x - 1)^2 + (y - 1)^2 + 9}$$
+
+$$3\sqrt{\left(3 + \frac{5}{3}\cos t\right)^2 + \left(4 + \frac{5}{3}\sin t\right)^2 + 9}$$
+
+Chạy Casio TABLE tìm Min: Với khoảng từ 0 $\rightarrow$ 2 $\cdot\pi$, STEP là 2 $\cdot\pi$ / 29
+
+<table border="1">
+  <tr>
+    <th>x</th>
+    <th>y</th>
+  </tr>
+  <tr>
+    <td>...</td>
+    <td>...</td>
+  </tr>
+  <tr>
+    <td>3.6832</td>
+    <td>13.856</td>
+  </tr>
+  <tr>
+    <td>3.8999</td>
+    <td>13.532</td>
+  </tr>
+  <tr>
+    <td>4.1165</td>
+    <td>13459</td>
+  </tr>
+  <tr>
+    <td>...</td>
+    <td>...</td>
+  </tr>
+</table>
+
+Thấy được trên TABLE $x = 4.1165$ có vẻ cho $y$ nhỏ nhất. Ta nhập lại biểu thức $3AM$ vào chế độ tính toán bình thường để `SHIFT SOLVE` tìm nghiệm chuẩn:
+
+$$\frac{d}{dx} \left(3\sqrt{\left(3 + \frac{5}{3}\cos t\right)^2 + \left(4 + \frac{5}{3}\sin t\right)^2 + 9}\right)$$
+
+Tìm được Min = $\sqrt{181}$ tại $t \approx 4.0688..$. Thay $t$ vào để tìm $M$:
+
+
+$$\begin{cases} x_M = 4 + \frac{5}{3} \cos t \\ y_M = 5 + \frac{5}{3} \sin t \end{cases}$$
+
+Ta được $M = (3; \frac{11}{3};0)$
+
+Dựa vào điều kiện cũ ở **Bước 4** ta suy ra được $N(6;\frac{23}{3};0)$
+
+**Vậy**, tổng hoành độ điểm $M$ và $N$ bằng: $x_m + x_N = 3 + 6 = 9$
