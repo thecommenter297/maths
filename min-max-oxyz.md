@@ -293,7 +293,10 @@ $$(12 - 3x_M)^2 + (15 - 3y_M)^2 = 25 \iff \mathbf{(x_M - 4)^2 + (y_M - 5)^2 = \f
 Từ phương trình đường tròn: $(x - 4)^2 + (y - 5)^2 = \left(\frac{5}{3}\right)^2$.
 Mọi điểm nằm trên đường tròn này luôn có dạng:
 
-$$\begin{cases} x = 4 + \frac{5}{3} \cos t \\ y = 5 + \frac{5}{3} \sin t \end{cases}$$
+$$\begin{cases} 
+x = 4 + \frac{5}{3} \cos t \\
+y = 5 + \frac{5}{3} \sin t 
+\end{cases}$$
 
 Thay thẳng cục này vào hàm cần đạt Min:
 
@@ -326,7 +329,7 @@ Chạy Casio TABLE tìm Min: Với khoảng từ 0 $\rightarrow$ 2 $\cdot\pi$, S
   </tr>
   <tr>
     <td>4.1165</td>
-    <td>13459</td>
+    <td>13.459</td>
   </tr>
   <tr>
     <td>...</td>
@@ -338,10 +341,13 @@ Thấy được trên TABLE $x = 4.1165$ có vẻ cho $y$ nhỏ nhất. Ta nhậ
 
 $$\frac{d}{dx} \left(3\sqrt{\left(3 + \frac{5}{3}\cos t\right)^2 + \left(4 + \frac{5}{3}\sin t\right)^2 + 9}\right)$$
 
-Tìm được Min = $\sqrt{181}$ tại $t \approx 4.0688..$. Thay $t$ vào để tìm $M$:
+Tìm được Min = $\sqrt{181}$ tại $t = 4.0688..$ . Thay $t$ vào để tìm $M$:
 
 
-$$\begin{cases} x_M = 4 + \frac{5}{3} \cos t \\ y_M = 5 + \frac{5}{3} \sin t \end{cases}$$
+$$\begin{cases}
+x_M = 4 + \frac{5}{3} \cos t \\
+y_M = 5 + \frac{5}{3} \sin t
+\end{cases}$$
 
 Ta được $M = (3; \frac{11}{3};0)$
 
