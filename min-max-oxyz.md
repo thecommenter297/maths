@@ -279,7 +279,7 @@ Thay $BN = 2AM$ ngược lại vào phương trình $(*)$ và $(**)$:
 
 $$\frac{x_M - 1}{AM} = \frac{10 - x_N}{2AM} \implies \mathbf{2x_M + x_N = 12}$$
 
-$$\mathbf{\frac{y_M - 1}{AM} = \frac{13 - y_N}{BN}} \implies 2y_M + y_N = 15$$
+$$\mathbf{\frac{y_M - 1}{AM} = \frac{13 - y_N}{2AM}} \implies 2y_M + y_N = 15$$
 
 ### Bước 5: Tìm M
 Từ $x_N = 12 - 2x_M$ và $y_N = 15 - 2y_M$, thế vào điều kiện $MN = 5$ ta được:
